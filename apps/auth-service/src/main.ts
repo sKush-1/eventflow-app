@@ -2,11 +2,18 @@ import 'dotenv/config';
 import { NestFactory } from '@nestjs/core';
 import { AuthServiceModule } from './auth-service.module';
 import { SERVICE_PORTS } from '@app/common';
+import { ValidationPipe } from '@nestjs/common';
 
 
 
 async function bootstrap() {
   const app = await NestFactory.create(AuthServiceModule);
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true,
+    forbidNonWhitelisted: true,
+    transform: true,
+  }))
+
   await app.listen(SERVICE_PORTS.AUTH_SERVICE ?? 3001);
 }
 bootstrap();
