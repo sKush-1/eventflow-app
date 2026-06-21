@@ -6,15 +6,14 @@ export const SERVICES = {
     TICKET_SERVICE: 'ticket-service',
     PAYMENT_SERVICE: 'payment-service',
     NOTIFICATION_SERVICE: 'notification-service',
-};
+} as const;
 
-export const SERVICES_PORTS = {
+export const SERVICE_PORTS = {
     API_GATEWAY: 3000,
     AUTH_SERVICE: 3001,
-    USER_SERVICE: 'user-service',
-    EVENTS_SERVICE: 'event-service',
-    TICKET_SERVICE: 'ticket-service',
-    PAYMENT_SERVICE: 'payment-service',
-    NOTIFICATION_SERVICE: 'notification-service',
-};
-
+    USER_SERVICE: 3002,
+    EVENTS_SERVICE: 3003,
+    TICKET_SERVICE: 3004,
+    PAYMENT_SERVICE: 3005,
+    NOTIFICATION_SERVICE: 3006,
+} as const;

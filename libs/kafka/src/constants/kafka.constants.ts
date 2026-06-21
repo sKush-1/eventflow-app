@@ -6,7 +6,7 @@ export const KAFKA_CONSUMER_GROUP = 'eventflowapp-consumer'
 
 export const KAFKA_TOPICS = {
     // Auth events 
-    USER_REGISERED: 'user.registered',
+    USER_REGISTERED: 'user.registered',
     USER_LOGIN: 'user.login',
     PASSWORD_RESET_REQUESTED: 'user.password-reset-requested',
 
