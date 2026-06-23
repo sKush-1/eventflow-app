@@ -3,7 +3,7 @@ import { uuid, varchar, timestamp, pgEnum, pgTable } from "drizzle-orm/pg-core";
 // Enums for user table
 export const roleEnum = pgEnum('role', ['USER', 'ADMIN', 'ORGANIZER']);
 
-// Users tables 
+// Users fields
 export const users = pgTable('users', {
     id: uuid('id').primaryKey().defaultRandom(),
     name: varchar('name', { length: 255 }).notNull(),
