@@ -31,9 +31,14 @@ export class EventsServiceController {
     return this.eventsServiceService.update(id, userId, userRole, updateEventDto);
   }
 
-  @Put(':id/cancel')
+  @Post(':id/cancel')
   cancel(@Param('id', ParseUUIDPipe) id: string, @Headers('x-user-id') userId: string, @Headers('x-user-role') userRole: string,) {
     return this.eventsServiceService.cancel(id, userId, userRole);
+  }
+
+  @Post(':id/publish')
+  publish(@Param('id', ParseUUIDPipe) id: string, @Headers('x-user-id') userId: string, @Headers('x-user-role') userRole: string,) {
+    return this.eventsServiceService.publish(id, userId, userRole);
   }
 
 }
